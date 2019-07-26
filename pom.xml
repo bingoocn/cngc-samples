@@ -6,6 +6,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>boot-sample-dictionary</module>
+        <module>boot-sample-validation</module>
     </modules>
     <parent>
         <groupId>com.cngc.boot</groupId>
