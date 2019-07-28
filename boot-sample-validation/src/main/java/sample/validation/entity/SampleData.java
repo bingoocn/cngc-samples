@@ -1,9 +1,10 @@
-package sample.dictionary.entity;
+package sample.validation.entity;
 
 import com.cngc.boot.web.dictionary.translate.DictTranslator;
 import lombok.Data;
-
-import javax.validation.constraints.NotNull;
+import sample.validation.constraints.CustomConstraintAnnotation;
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 /**
@@ -14,6 +15,10 @@ import java.util.Date;
 @Data
 public class SampleData {
 
+
+    @CustomConstraintAnnotation(message = "自定义的内容")
+    private int num;
+
     @DictTranslator(value = "产品类型", serializeKeyName = "xxx",deSerializeKeyName = "xxx")
     private String typeCode;
 
@@ -21,4 +26,10 @@ public class SampleData {
     private String select;
 
     private Date date;
+
+    @NotEmpty(message = "名字不能为空!")
+    private String name;
+
+    @Valid
+    private NestedBean nestedBean;
 }

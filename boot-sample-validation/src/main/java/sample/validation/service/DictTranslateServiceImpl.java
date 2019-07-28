@@ -1,4 +1,4 @@
-package sample.dictionary.service;
+package sample.validation.service;
 
 import com.cngc.boot.web.dictionary.service.DictTranslateService;
 import org.springframework.stereotype.Service;

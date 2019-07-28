@@ -1,4 +1,4 @@
-package sample.dictionary;
+package sample.validation;
 
 /**
  * @author maxD
