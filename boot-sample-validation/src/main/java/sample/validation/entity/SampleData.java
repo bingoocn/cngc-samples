@@ -27,7 +27,7 @@ public class SampleData {
 
     private Date date;
 
-    @NotEmpty(message = "名字不能为空!")
+    @NotEmpty
     private String name;
 
     @Valid
