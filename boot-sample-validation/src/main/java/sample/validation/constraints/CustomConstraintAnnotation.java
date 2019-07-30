@@ -1,5 +1,7 @@
 package sample.validation.constraints;
 
+import com.cngc.boot.web.constant.RequestParameterErrorCode;
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
@@ -13,7 +15,10 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = CustomConstraintValidator.class)
 public @interface CustomConstraintAnnotation {
+
     String message() default "内容需要时奇数!";
+
+    String code() default RequestParameterErrorCode.INVALID_FORMAT;
 
     Class<?>[] groups() default {};
 
