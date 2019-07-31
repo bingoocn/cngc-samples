@@ -1,6 +1,6 @@
 package sample.validation.constraints;
 
-import com.cngc.boot.web.constant.RequestParameterErrorCode;
+import com.cngc.boot.web.constant.RequestBodyErrorCode;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -18,7 +18,7 @@ public @interface CustomConstraintAnnotation {
 
     String message() default "内容需要时奇数!";
 
-    String code() default RequestParameterErrorCode.INVALID_FORMAT;
+    String code() default RequestBodyErrorCode.INVALID_FORMAT;
 
     Class<?>[] groups() default {};
 
