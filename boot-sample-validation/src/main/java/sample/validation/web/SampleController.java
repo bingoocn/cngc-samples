@@ -17,12 +17,8 @@ import javax.validation.Valid;
 public class SampleController {
 
     @PostMapping
-    public SampleData createSample(@Valid @RequestBody SampleData sampleData, BindingResult bindingResult) throws RequestBodyValidationException {
-        if (bindingResult.hasErrors()) {
-            throw new RequestBodyValidationException(bindingResult.getFieldErrors());
-        }
+    public SampleData createSample(@Valid @RequestBody SampleData sampleData) {
         return sampleData;
-
     }
 
 
