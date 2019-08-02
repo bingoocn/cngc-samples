@@ -15,6 +15,10 @@
             <groupId>com.cngc.boot</groupId>
             <artifactId>boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.cngc.boot</groupId>
+            <artifactId>boot-starter-security</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

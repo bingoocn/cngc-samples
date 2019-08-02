@@ -2,6 +2,7 @@ package sample.validation.web;
 
 import com.cngc.boot.web.constant.RequestBodyErrorCode;
 import com.cngc.boot.web.exception.RequestBodyValidationException;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,7 @@ public class SampleController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('xx')")
     public SampleData createSample(@Valid @RequestBody SampleData sampleData, BindingResult bindingResult) throws RequestBodyValidationException {
         // 手动进行请求体数据校验,抛出异常.
         FieldError fieldError = new FieldError("", "id", null, false,
