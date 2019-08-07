@@ -1,0 +1,13 @@
+server:
+  port: 9999
+
+spring:
+  main:
+    #    允许bean的名字重复,后者覆盖前者
+    allow-bean-definition-overriding: true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+logging:
+  level:
+    root: info
