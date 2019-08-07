@@ -27,5 +27,5 @@ public @interface RequestLog {
      *
      * @return RequestLogLevel
      */
-    RequestLogLevel level() default RequestLogLevel.INFO;
+    RequestLogEvent level() default RequestLogEvent.DEFAULT;
 }

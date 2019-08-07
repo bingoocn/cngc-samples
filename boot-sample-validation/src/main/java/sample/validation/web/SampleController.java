@@ -1,5 +1,6 @@
 package sample.validation.web;
 
+import com.cngc.boot.core.validation.FieldErrorCode;
 import com.cngc.boot.core.validation.FieldErrorFactory;
 import com.cngc.boot.web.constant.RequestBodyErrorCode;
 import com.cngc.boot.web.exception.RequestBodyValidationException;
@@ -29,7 +30,7 @@ public class SampleController {
     public SampleData createSample(@Valid @RequestBody SampleData sampleData, BindingResult bindingResult) throws RequestBodyValidationException {
         // 手动进行请求体数据校验,抛出异常.
         FieldError fieldError = FieldErrorFactory.createFieldError(
-                 "id", RequestBodyErrorCode.ALREADY_EXISTS, "新增资源已存在");
+                 "id", FieldErrorCode.MISSING_ATTRIBUTE, "新增资源已存在");
         throw new RequestBodyValidationException(Arrays.asList(new FieldError[]{fieldError}));
     }
 
