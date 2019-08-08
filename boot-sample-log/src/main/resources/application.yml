@@ -11,3 +11,14 @@ spring:
 logging:
   level:
     root: info
+
+resourceone:
+  portal:
+    #r1_home目录
+    resourceone-home: D:\work\r1home\ResourceOneHome_LXZJZ
+    #resourceone数据源
+    resourceone-datasource:
+      url: jdbc:oracle:thin:@10.100.47.60:1521:orcl
+      username: CNGC_FRAMEWORK_SHENGCHAN
+      password: CNGC_FRAMEWORK_SHENGCHAN
+      driver-class-name: oracle.jdbc.driver.OracleDriver
