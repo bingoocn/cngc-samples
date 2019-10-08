@@ -1,0 +1,33 @@
+package sample.jpa.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import sample.jpa.entity.SampleData;
+import sample.jpa.entity.SubEntity;
+import sample.jpa.repository.SampleRepository;
+import sample.jpa.repository.SubEntityRepository;
+
+/**
+ * @author maxD
+ */
+@Service
+public class SampleService {
+
+    @Autowired
+    private SampleRepository sampleRepository;
+
+    @Autowired
+    private SubEntityRepository subEntityRepository;
+
+    public void save(SampleData sampleData) {
+        sampleRepository.save(sampleData);
+
+        if(!CollectionUtils.isEmpty(sampleData.getModifiedSubEntities())) {
+            for(SubEntity subEntity : sampleData.getModifiedSubEntities()) {
+                subEntity.setMainId(sampleData.getId());
+                subEntityRepository.save(subEntity);
+            }
+        }
+    }
+}
