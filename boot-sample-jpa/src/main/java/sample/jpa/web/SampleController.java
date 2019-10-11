@@ -28,7 +28,6 @@ public class SampleController {
 
     @PutMapping()
     public SampleData update(@RequestBody SampleData sd) {
-        sampleService.save(sd);
-        return sd;
+        return sampleService.save(sd);
     }
 }

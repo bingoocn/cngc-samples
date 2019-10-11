@@ -8,6 +8,9 @@ import sample.jpa.entity.SubEntity;
 import sample.jpa.repository.SampleRepository;
 import sample.jpa.repository.SubEntityRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author maxD
  */
@@ -20,14 +23,16 @@ public class SampleService {
     @Autowired
     private SubEntityRepository subEntityRepository;
 
-    public void save(SampleData sampleData) {
-        sampleRepository.save(sampleData);
-
+    public SampleData save(SampleData sampleData) {
+        SampleData result = sampleRepository.save(sampleData);
+        List<SubEntity> subEntities = new ArrayList<>();
         if(!CollectionUtils.isEmpty(sampleData.getModifiedSubEntities())) {
             for(SubEntity subEntity : sampleData.getModifiedSubEntities()) {
                 subEntity.setMainId(sampleData.getId());
-                subEntityRepository.save(subEntity);
+                subEntities.add(subEntityRepository.save(subEntity));
             }
         }
+        result.setModifiedSubEntities(subEntities);
+        return result;
     }
 }
