@@ -2,6 +2,8 @@ server:
   port: 9999
 
 spring:
+  kafka:
+    bootstrap-servers: localhost:9092
   main:
     #    允许bean的名字重复,后者覆盖前者
     allow-bean-definition-overriding: true
@@ -18,7 +20,7 @@ resourceone:
     resourceone-home: D:\work\r1home\ResourceOneHome_LXZJZ
     #resourceone数据源
     resourceone-datasource:
-      url: jdbc:oracle:thin:@10.100.47.60:1521:orcl
+      url: jdbc:oracle:thin:@10.100.220.110:1521:ywxt
       username: CNGC_FRAMEWORK_SHENGCHAN
       password: CNGC_FRAMEWORK_SHENGCHAN
       driver-class-name: oracle.jdbc.driver.OracleDriver
