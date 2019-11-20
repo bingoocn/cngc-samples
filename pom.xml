@@ -9,6 +9,7 @@
         <module>boot-sample-validation</module>
         <module>boot-sample-log</module>
         <module>boot-sample-jpa</module>
+        <module>boot-sample-admin</module>
     </modules>
     <parent>
         <groupId>com.cngc.boot</groupId>
