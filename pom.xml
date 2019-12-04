@@ -10,6 +10,7 @@
         <module>boot-sample-log</module>
         <module>boot-sample-jpa</module>
         <module>boot-sample-admin</module>
+        <module>boot-sample-etl</module>
     </modules>
     <parent>
         <groupId>com.cngc.boot</groupId>
