@@ -18,7 +18,9 @@ public class SampleData {
     private String typeCode;
 
     @DictTranslator(value = "选择类型")
-    private String select;
+    private String selectCode;
 
     private Date date;
+
+    private String userName;
 }

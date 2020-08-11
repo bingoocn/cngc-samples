@@ -19,7 +19,8 @@ public class SampleController {
     public SampleData index2() {
         SampleData sd = new SampleData();
         sd.setTypeCode("01");
-        sd.setSelect("02");
+        sd.setSelectCode("02");
+        sd.setUserName("张三");
         sd.setDate(new Date());
         return sd;
     }
